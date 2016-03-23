@@ -1,5 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
-
 import {App} from '../src/app/app';
 
 describe("Given an app", function(){

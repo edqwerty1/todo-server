@@ -1,4 +1,3 @@
-/// <reference path="../../typings/main.d.ts" />
 import todo = require('./todo');
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
