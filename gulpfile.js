@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     superstatic = require( 'superstatic' ),
     KarmaServer = require('karma').Server,
-    server = require('gulp-express');
+    server = require('gulp-express'),
+    gnf = require('gulp-npm-files');
 var config = new Config();
 
 
@@ -85,6 +86,21 @@ gulp.task('server', function () {
     gulp.watch(['./src/js/server.js', '/src/js/routes/**/*.js'], server.run);
 });
 
+gulp.task('clean', function() {
+  return del([config.build]);
+});
+
+
+gulp.task('build', ['compile-ts', 'clean'], function(){   
+    console.log("here");
+    gulp.src(gnf(), {base:'./'}).pipe(gulp.dest(config.build));
+    gulp.src([
+                              config.tsOutputPath +'/**/*.js',   
+                              config.tsOutputPath +'/**/*.js.map', 
+                              '!' + config.tsOutputPath + '/lib'
+                           ])
+        .pipe(gulp.dest(config.build))
+});
 
 
 gulp.task('default', ['ts-lint', 'compile-ts']);

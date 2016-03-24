@@ -4,6 +4,7 @@ var GulpConfig = (function () {
         //Got tired of scrolling through all the comments so removed them
         //Don't hurt me AC :-)
         this.source = './src/';
+        this.build = './dist/';
         this.sourceApp = this.source + 'app/';
 
         this.tsOutputPath = this.source + '/js';
