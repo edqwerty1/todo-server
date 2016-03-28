@@ -1,15 +1,15 @@
 import url = require('./url');
 
 export interface IToDo {
-    Id: number;
-    Message: string;
-    CreatedDateTime: Date;
-    Urls:  url.IUrl[]
+    id: number;
+    message: string;
+    createdDateTime: Date;
+    urls:  url.IUrl[]
 }
 
 
 export class ToDo implements IToDo {
-    constructor(public Id: number, public Message: string, public CreatedDateTime: Date, public Urls: url.IUrl[]) {
+    constructor(public id: number, public message: string, public createdDateTime: Date, public urls: url.IUrl[]) {
 
     }
 }

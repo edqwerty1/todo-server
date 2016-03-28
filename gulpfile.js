@@ -1,14 +1,12 @@
 'use strict';
 
 var gulp = require('gulp'),
-    debug = require('gulp-debug'),
     tsc = require('gulp-typescript'),
     tslint = require('gulp-tslint'),
     sourcemaps = require('gulp-sourcemaps'),
     del = require('del'),
     Config = require('./gulpfile.config'),
     tsProject = tsc.createProject('tsconfig.json'),
-    browserSync = require('browser-sync'),
     superstatic = require( 'superstatic' ),
     KarmaServer = require('karma').Server,
     server = require('gulp-express'),
