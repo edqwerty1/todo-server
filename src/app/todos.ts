@@ -1,14 +1,13 @@
-import todo = require('./todo');
-import url = require('./url');
+import {IToDo} from './todo';
+import {IUrl} from './url';
 
 export interface IToDos {
-    Todos: todo.IToDo[],
-    Urls: url.IUrl[]
+    todos: IToDo[];
+    urls: IUrl[];
 }
 
 
 export class ToDos implements IToDos {
-    constructor(public Todos:todo.IToDo[], public Urls: url.IUrl[]) {
-        
+    constructor(public todos:IToDo[], public urls: IUrl[]) {
     }
 }

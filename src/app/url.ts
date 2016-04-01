@@ -1,4 +1,4 @@
 export interface IUrl {
-    rel: string,
-    url: string
+    rel: string;
+    url: string;
 }
